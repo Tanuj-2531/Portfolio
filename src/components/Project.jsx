@@ -29,7 +29,7 @@ const Project = (props) => {
                   })}
                 </div>
                 <div className='flex flex-col p-3 my-3 text-justify gap-3 min-h-36'>
-                  {item.features.map((feature, idx) => {
+                  {item.features.slice(0, 3).map((feature, idx) => {
                     return(
                       <div key={idx} className='flex gap-2 min-h-12'>
                         <ArrowRight className='shrink-0 mt-1' size={16} />
