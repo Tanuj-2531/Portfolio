@@ -13,7 +13,7 @@ const Project = (props) => {
         <h1 className='text-4xl font-bold '>My Projects</h1>
         <p className='text-2xl max-w-2xl text-center'>A collection of projects that reflect my skills and learning journey.</p>
       </div>
-      <div className='grid grid-cols-3 p-11 h-full w-full gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-11 h-full w-full gap-10'>
         {props.projects.map((item) => {
           return(
             <div key={item.id} className={projectCardClass}>
