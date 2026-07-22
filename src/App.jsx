@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import About from './components/About'
+import About from './pages/About'
 import Footer from './components/Footer'
-import Project from './components/Project'
+import Project from './pages/Project'
 import { Route, Routes } from 'react-router-dom'
 import ProjectDetails from './pages/ProjectDetails'
 
@@ -105,6 +105,8 @@ const App = () => {
           <About />
           <Project projects={projects} />
         </>} />
+        <Route path='/about' element={<About />} />
+        <Route path='/project' element={<Project projects={projects} />} />
         <Route path='/project/:projectURL' element={<ProjectDetails projects={projects} />}/>
       </Routes>
       <Footer />

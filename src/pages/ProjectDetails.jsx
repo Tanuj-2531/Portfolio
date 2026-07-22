@@ -42,7 +42,7 @@ const ProjectDetails = (props) => {
         <h1 className='text-4xl font-bold text-center mt-15 font-sans'>Overview</h1>
         <p className='text-center'>{MyProject.overview}</p>
         <h1 className='text-4xl font-bold text-center mt-15 font-sans'>Achievements</h1>
-        <p className='text-center'>
+        <div className='flex flex-col gap-3 mt-4'>
           {MyProject.features.map((feature, idx)=> {
             return(
               <div key={idx} className='flex gap-2 min-h-12'>
@@ -51,7 +51,7 @@ const ProjectDetails = (props) => {
               </div>
             )
           })}
-        </p>
+        </div>
       </div>
     </div>
   )

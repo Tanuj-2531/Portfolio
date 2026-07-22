@@ -24,7 +24,6 @@ const Footer = () => {
                 <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link>
                 {samePage('about', 'About')}
                 {samePage('project', 'Project')}
-                {samePage('contact', 'Contact')}
             </div>
             <div className='flex flex-col mb-2 items-center md:items-start'>
                 <h1 className='text-2xl font-bold mb-2'>Connect</h1>

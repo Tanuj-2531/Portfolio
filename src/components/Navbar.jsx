@@ -30,7 +30,6 @@ const Navbar = () => {
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link>
           {samePage('about', 'About')}
           {samePage('project', 'Project')}
-          {samePage('contact', 'Contact')}
         </div>
         <button className='cursor-pointer' onClick={changeTheme}>{theme === 'dark' ? <Moon size={16} /> : <Sun size={16} />}</button>
         <button className="md:hidden cursor-pointer" onClick={hamBurger}>
@@ -42,7 +41,6 @@ const Navbar = () => {
           <Link to="/" onClick={hamBurger}>Home</Link>
           {samePage("about", "About")}
           {samePage("project", "Project")}
-          {samePage("contact", "Contact")}
         </div>
       )}
     </div>
