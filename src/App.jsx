@@ -1,16 +1,20 @@
 import React, { useContext } from 'react'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Home from './pages/Home'
 import About from './components/About'
 import Footer from './components/Footer'
 import Project from './components/Project'
+import { Route, Routes } from 'react-router-dom'
+import ProjectDetails from './pages/ProjectDetails'
+
 
 const App = () => {
   const projects = [
     {
       id: 1,
+      projectURL: "youtube-clone",
       title: "YouTube-Clone",
-      image: "src/assets/youtube.png",
+      image: "/youtube.png",
       description:
         "A full-stack YouTube clone built with the MERN stack, featuring user authentication, video browsing, search functionality, responsive design, and a clean, modern interface for an engaging user experience.",
       technologies: [
@@ -34,8 +38,9 @@ const App = () => {
     },
     {
       id: 2,
+      projectURL: "library",
       title: "Library-Management-System",
-      image: "src/assets/library.png",
+      image: "/library.png",
       description:
         "Designed and developed a frontend-based Library Management System featuring book listing, search functionality, category organization, responsive layouts, and an interactive user interface for efficient library management.",
       technologies: [
@@ -57,8 +62,9 @@ const App = () => {
     },
     {
       id: 3,
+      projectURL: "textflow",
       title: "Textflow-Write Better",
-      image: "src/assets/textflow.png",
+      image: "/textflow.png",
       description:
         "Developed a responsive text utility application that enables users to transform, format, and analyze text with features like case conversion, word counting, character counting, and extra space removal.",
       technologies: [
@@ -81,9 +87,14 @@ const App = () => {
   return (
     <div className='font-mono'>
       <Navbar />
-      <Home />
-      <About />
-      <Project projects={projects} />
+      <Routes>
+        <Route path='/' element={<>
+          <Home />
+          <About />
+          <Project projects={projects} />
+        </>} />
+        <Route path='/project/:projectURL' element={<ProjectDetails projects={projects} />}/>
+      </Routes>
       <Footer />
     </div>
   )

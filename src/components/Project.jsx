@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ThemeDataContext } from '../Context/ThemeContext'
 import { ArrowRight, SquareArrowOutUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Project = (props) => {
     const [theme] = useContext(ThemeDataContext)
@@ -38,7 +39,9 @@ const Project = (props) => {
                   })}
                 </div>
                 <div className='flex justify-between items-center mr-5 mt-auto'>
-                  <button className={viewProjectClass}><ArrowRight size={16} />View Project</button>
+                  <Link to={`/project/${item.projectURL}`}>
+                    <button className={viewProjectClass}><ArrowRight size={16} />View Project</button>
+                  </Link>
                   <div className='flex items-center gap-4'>
                     <a className='' href={item.github} target='_blank'>
                     <img className={`h-8 w-8 ${theme === "dark" ? "invert" : "invert-0"} hover:scale-120`} src="/github.png" alt="" />

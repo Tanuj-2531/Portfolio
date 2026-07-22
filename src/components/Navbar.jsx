@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Sun, Moon } from 'lucide-react';
 import { ThemeDataContext } from '../Context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [theme, setTheme] = useContext(ThemeDataContext)
@@ -16,10 +17,10 @@ const Navbar = () => {
             <h1 className='text-2xl font-bold'>Tanuj Agarwal</h1>
         </div>
         <div className='flex gap-10 m-15 font-semibold'>
-            <a href="#">Home</a>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link>
             <a href="#about">About</a>
             <a href="#project">Project</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
             <button className='cursor-pointer' onClick={changeTheme}>{theme === 'dark' ? <Moon size={16} /> : <Sun size={16} />}</button>
         </div>
     </div>

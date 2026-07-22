@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Copyright } from 'lucide-react';
 import { ThemeDataContext } from '../Context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const [theme] = useContext(ThemeDataContext)
@@ -14,7 +15,7 @@ const Footer = () => {
             </div>
             <div className='flex flex-col'>
                 <h1 className='text-2xl font-bold mb-2'>Quick Links</h1>
-                <a href="#">Home</a>
+                <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link>
                 <a href="#about">About</a>
                 <a href="#project">Project</a>
                 <a href="#">Contact</a>
