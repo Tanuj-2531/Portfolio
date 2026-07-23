@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import { Download } from "lucide-react";
 import { ThemeDataContext } from '../Context/ThemeContext';
+import profile from '../assets/profile.jpg'
+import resume from '../assets/tanuj_resume.pdf';
 
 const Home = () => {
     const [theme] = useContext(ThemeDataContext)
     const iconClass = `h-8 w-8 ${theme === "dark" ? "invert-0" : "invert"} hover:scale-120`
   return (
     <div className={`p-10 lg:p-20 flex flex-col lg:flex-row items-center justify-around gap-5 lg:gap-40 ${theme === 'dark' ? 'bg-[#3e3e42] text-[#f9f9f7]' : 'bg-[#f9f9f7] text-gray-900'}`}>
-        <img className={`${theme === 'dark' ? 'shadow-white/30' : 'shadow-black/30'} m-12 h-80 w-80 xl:h-120 xl:w-120 rounded-full object-cover shadow-lg`} src="src/assets/profile.jpg" alt="" />
+        <img className={`${theme === 'dark' ? 'shadow-white/30' : 'shadow-black/30'} m-12 h-80 w-80 xl:h-120 xl:w-120 rounded-full object-cover shadow-lg`} src={profile} alt="" />
         <div className='w-full lg:w-[40%] flex flex-col gap-5'>
             <h1 className='text-4xl font-extrabold'>Hey Guys, I'm Tanuj Agarwal</h1>
             <h3 className='text-2xl font-semibold font-serif'>Frontend Developer</h3>
@@ -30,7 +32,7 @@ const Home = () => {
                         <img className={iconClass} src="/phone-call.png" alt="" />
                     </a>
                 </div>
-                <a className={`flex items-center gap-4 ${theme === 'dark' ? 'bg-white text-gray-900' : 'bg-gray-900 text-[#f9f9f7]'} font-bold rounded-md px-3 py-1 mr-5 hover:scale-110`} href='src/assets/tanuj_resume.pdf' download><Download strokeWidth={2.5} /> Resume</a>
+                <a className={`flex items-center gap-4 ${theme === 'dark' ? 'bg-white text-gray-900' : 'bg-gray-900 text-[#f9f9f7]'} font-bold rounded-md px-3 py-1 mr-5 hover:scale-110`} href={resume} download><Download strokeWidth={2.5} /> Resume</a>
             </div>
         </div>
     </div>
