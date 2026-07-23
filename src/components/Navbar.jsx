@@ -20,7 +20,7 @@ const Navbar = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
   return (
-    <div className={`${theme === 'dark' ? 'bg-[#1e1e1e]/30 text-white' : 'bg-[#e5e3d9]/30 text-[#111]'} backdrop-blur-md shadow-md flex items-center justify-between z-50 rounded-full fixed h-15 top-4 left-15 right-15 md:left-25 md:right-25`}>
+    <div className={`${theme === 'dark' ? 'bg-[#1e1e1e]/30 text-white' : 'bg-[#e5e3d9]/30 text-[#111]'} backdrop-blur-md shadow-lg flex items-center justify-between z-50 rounded-full fixed h-15 top-4 left-15 right-15 md:left-25 md:right-25`}>
       <Link to='/' onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className='p-4 md:p-15 flex items-center'>
           <img className={`h-15 md:h-25 ${theme === "dark" ? "invert-0" : "invert"}`} src="/logo.png" alt="" />
           <h1 className='text-lg md:text-xl lg:text-2xl font-bold'>Tanuj Agarwal</h1>
