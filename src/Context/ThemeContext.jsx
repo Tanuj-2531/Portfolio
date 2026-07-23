@@ -1,8 +1,14 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const ThemeDataContext = createContext()
 const ThemeContext = ({children}) => {
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState(()=>{
+      return localStorage.getItem('theme') || 'light'
+    })
+
+    useEffect(()=>{
+      localStorage.setItem('theme', theme)
+    }, [theme])
   return (
     <div>
         <ThemeDataContext.Provider value={[theme, setTheme]}>

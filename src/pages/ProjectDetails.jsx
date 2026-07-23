@@ -9,18 +9,20 @@ const ProjectDetails = (props) => {
   const {projectURL} = useParams()
   const MyProject = props.projects.find((item)=> item.projectURL === projectURL)
   return (
-    <div className={`${theme === 'dark' ? 'bg-[#2d2d30] text-white' : 'bg-[#f4f3ef] text-[#111]'} w-full  p-28`}>
+    <div className={`${theme === 'dark' ? 'bg-[#2d2d30] text-white' : 'bg-[#f4f3ef] text-[#111]'} w-full px-20 py-28`}>
       <h1 className='text-5xl font-extrabold text-center mb-15 underline font-sans'>{MyProject.title}</h1>
-      <div className='flex justify-between gap-10'>
-        <img className={`${MyProjectStyle} w-4xl h-auto object-contain rounded-xl shadow-lg`} src={MyProject.image} alt="" />
-        <div className={`${MyProjectStyle} flex flex-col rounded-xl shadow-lg`}>
+      <div className='flex flex-col lg:flex-row justify-between gap-10'>
+        <div className='w-auto xl:w-2/3'>
+          <img className={`${MyProjectStyle} w-full h-80 md:h-full object-fit rounded-xl shadow-lg`} src={MyProject.image} alt="" />
+        </div>
+        <div className={`${MyProjectStyle} w-full xl:w-1/3 flex flex-col rounded-xl shadow-lg`}>
           <h1 className='text-xl font-extrabold font-sans py-5 text-center'>Project Details</h1>
-          <p className='p-3 mx-2 text-justify min-h-32'>{MyProject.description}</p>
-          <div className="flex justify-center my-2">
+          <p className='p-3 mx-2 text-center xl:text-justify min-h-32'>{MyProject.description}</p>
+          <div className="flex justify-center lg:my-2">
             <div className="h-px w-full bg-linear-to-r from-transparent via-gray-400 to-transparent"></div>
           </div>
-          <h3 className='text-md font-bold font-sans px-4 mt-2'>Technologies</h3>
-          <div className='flex gap-5 flex-wrap gap-x-5 gap-y-1 px-4 font-semibold font-sans text-gray-500 mt-2 min-h-24 items-center'>
+          <h3 className='text-md font-bold font-sans px-4 py-2 mt-2'>Technologies</h3>
+          <div className='flex flex-wrap gap-x-3 lg:gap-x-5 gap-y-3 px-4 font-semibold font-sans text-gray-500 mt-2 items-center'>
             {MyProject.technologies.map((tech, idx) => {
               return(
                 <p className="bg-gray-300 text-gray-800 px-2 py-1 rounded-md text-sm font-semibold" key={idx}>{tech}</p>
@@ -45,7 +47,7 @@ const ProjectDetails = (props) => {
         <div className='flex flex-col gap-3 mt-4'>
           {MyProject.features.map((feature, idx)=> {
             return(
-              <div key={idx} className='flex gap-2 min-h-12'>
+              <div key={idx} className='flex gap-2 min-h-8'>
                 <ArrowRight className='shrink-0 mt-1' size={16} />
                 <p className='font-semibold'>{feature}</p>
               </div>

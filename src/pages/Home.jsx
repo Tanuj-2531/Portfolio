@@ -20,6 +20,9 @@ const Home = () => {
                     <a href="https://linkedin.com/in/tanuj-agarwal2531" target='_blank'>
                         <img className={iconClass} src="/linkedin.png" alt="" />
                     </a>
+                    <a href="https://wa.me/917877798784" target='_blank'>
+                        <img className={iconClass} src="/whatsapp.png" alt="" />
+                    </a>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tanujag.2531@gmail.com" target='_blank'>
                         <img className={iconClass} src="/email.png" alt="" />
                     </a>
