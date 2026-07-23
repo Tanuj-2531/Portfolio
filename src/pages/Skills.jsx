@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Skills = () => {
-    const aboutParaStyle = 'bg-gray-300 text-gray-800 px-2 rounded-lg font-sans font-semibold'
+    const aboutParaStyle = 'bg-gray-300 text-gray-800 px-3 py-1 rounded-lg text-sm sm:text-base font-sans font-semibold hover:scale-105 transition whitespace-nowrap'
     const skillData = [
         {
             title: 'Languages',
@@ -21,11 +21,11 @@ const Skills = () => {
         },
     ]
   return (
-    <div className='space-y-4'>
+    <div className='space-y-5'>
         {skillData.map((item)=>(
             <div key={item.title}>
-                <h4 className='font-bold text-lg'>{item.title}</h4>
-                <div className='flex flex-wrap justify-start items-center gap-4'>
+                <h4 className='font-bold text-base sm:text-lg mb-2'>{item.title}</h4>
+                <div className='flex flex-wrap gap-2 sm:gap-3'>
                     {item.items.map((skill)=>(
                         <p key={skill} className={aboutParaStyle}>{skill}</p>
                     ))}
