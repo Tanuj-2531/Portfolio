@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { ThemeDataContext } from '../Context/ThemeContext';
 
 const NotFound = () => {
     const [theme, setTheme] = useContext(ThemeDataContext)
+    useEffect(()=>{
+      window.scrollTo(0, 0)
+    }, [])
   return (
     <div className={`${theme === 'dark' ? 'bg-[#252526] text-white' : 'bg-[#efeee8] text-[#111]'} flex flex-col min-h-screen items-center justify-center px-4 py-8 lg:px-0 lg:py-0`}>
       <div className={`${theme === 'dark' ? 'shadow-white/30' : 'shadow-black/30'} w-full max-w-md sm:max-w-xl lg:max-w-2xl mx-auto text-center shadow-lg rounded-2xl`}>

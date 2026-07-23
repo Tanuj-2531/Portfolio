@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ThemeDataContext } from '../Context/ThemeContext'
 import Skills from './Skills'
 
@@ -6,6 +6,9 @@ const About = () => {
     const [theme] = useContext(ThemeDataContext)
     const aboutParaStyle = 'bg-gray-300 text-gray-800 px-2 rounded-lg font-sans font-semibold'
     const aboutCardStyle = `${theme === 'dark' ? 'bg-[#1e1e1e] text-white shadow-white/30' : 'bg-[#eae8e0] text-gray-900 shadow-black/30'}`
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    }, [])
   return (
     <div className={`${theme === 'dark' ? 'bg-[#2d2d30] text-white' : 'bg-[#f4f3ef] text-[#111]'} w-full px-5 py-10 lg:p-20`} id='about'>
         <div className='flex flex-col items-center justify-center gap-4 mb-5'>

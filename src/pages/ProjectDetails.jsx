@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ThemeDataContext } from '../Context/ThemeContext'
 import { Link, useParams } from 'react-router-dom'
 import { SquareArrowOutUpRight, ArrowRight, ArrowLeft } from 'lucide-react'
@@ -12,6 +12,10 @@ const ProjectDetails = (props) => {
   if (!MyProject) {
     return <NotFound />
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className={`${theme === 'dark' ? 'bg-[#2d2d30] text-white' : 'bg-[#f4f3ef] text-[#111]'} w-full px-5 py-10 sm:px-8 lg:px-20 lg:py-28`}>
       <h1 className='text-3xl sm:text-4xl lg:text-5xl px-2 font-extrabold text-center mb-15 underline font-sans'>{MyProject.title}</h1>

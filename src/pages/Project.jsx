@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ThemeDataContext } from '../Context/ThemeContext'
 import { ArrowRight, SquareArrowOutUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,9 @@ const Project = (props) => {
     const [theme] = useContext(ThemeDataContext)
     const projectCardClass = `${theme === 'dark' ? 'bg-[#1e1e1e] text-white shadow-white/30' : 'bg-[#eae8e0] text-gray-900 shadow-black/30 text-gray-900'} h-full rounded-3xl shadow-lg overflow-hidden flex flex-col `
     const viewProjectClass = `flex items-center bg-gray-300 text-gray-800 m-5 px-3 py-2 text-sm rounded-lg font-bold cursor-pointer hover:scale-105 ${theme === 'dark' ? 'bg-white text-gray-950' :'bg-gray-950 text-white'}`
+    useEffect(()=>{
+      window.scrollTo(0, 0)
+    }, [])
   return (
     <div className={`${theme === 'dark' ? 'bg-[#252526] text-white' : 'bg-[#efeee8] text-[#111]'} w-full px-5 py-10 lg:p-20`} id='project'>
       <div className='flex flex-col items-center justify-center gap-4 mb-5'>
